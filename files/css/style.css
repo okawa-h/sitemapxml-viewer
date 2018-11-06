@@ -1,0 +1,185 @@
+@import url("base.css");
+
+/*-------------------------------------------------------------------------
+	Layout
+/*-----------------------------------------------------------------------*/
+body {
+	-webkit-font-smoothing: antialiased;
+	background-color: #eee;
+}
+
+#all {
+	padding: 60px;
+}
+
+#main {
+	padding: 30px;
+	background-color: #fff;
+}
+
+.wrap {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/*-------------------------------------------------------------------------
+	Common
+/*-----------------------------------------------------------------------*/
+h1 {
+	margin-bottom: 30px;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+/*-------------------------------------------------------------------------
+	Style
+/*-----------------------------------------------------------------------*/
+.site-url {
+	margin-bottom: 30px;
+	padding: 1em;
+	background-color: #ccc;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 1;
+}
+
+.directory-wrap {
+	margin-top: -20px;
+	margin-left: -20px;
+}
+
+.directory {
+	float: left;
+	width: calc(50% - 20px);
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.directory:last-child {
+	margin-bottom: 0;
+}
+
+	.directory.active .toggle:after {
+		display: none;
+	}
+
+.info {
+	position: relative;
+	background-color: #efefef;
+	cursor: pointer;
+}
+
+.info:hover {
+	opacity: .6;
+}
+
+h3 {
+	padding: 1em;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1;
+}
+
+.pagelength {
+	position: absolute;
+	top: 50%;
+	right: 40px;
+	margin-top: -.5em;
+	font-size: 14px;
+	line-height: 1;
+}
+
+.toggle {
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	width: 16px;
+	height: 16px;
+	margin-top: -8px;
+	border: none;
+	background-color: transparent;
+	line-height: 1;
+	outline: none;
+	padding: 0;
+	appearance: none;
+}
+
+.toggle:before,
+.toggle:after {
+	display: block;
+	content: '';
+	visibility: visible;
+	position: absolute;
+	top: 50%;
+	background-color: #000;
+}
+
+.toggle:before {
+	left: 0;
+	width: 100%;
+	height: 2px;
+	margin-top: -1px;
+}
+
+.toggle:after {
+	left: 50%;
+	width: 2px;
+	height: 100%;
+	margin-top: -50%;
+	margin-left: -1px;
+}
+
+.file-list {
+	padding: 5px 10px;
+}
+
+	.file-list li {
+		margin-bottom: 5px;
+	}
+
+	.file-list li:last-child {
+		margin-bottom: 0;
+	}
+
+		.file-list li a {
+			display: inline-block;
+			position: relative;
+			padding-left: 1em;
+			font-size: 12px;
+			line-height: 1;
+		}
+
+		.file-list li a:hover {
+			opacity: .8;
+		}
+
+		.file-list li a:before {
+			display: block;
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			margin-top: -.25em;
+			width: .5em;
+			height: .5em;
+			border-radius: 50%;
+			background-color: #000;
+		}
+
+/*-------------------------------------------------------------------------
+	Contenthidder
+/*-----------------------------------------------------------------------*/
+[data-js="contenthidder"] {
+}
+
+[data-js="contenthidder"] [data-contenthidder="toggle"] {
+}
+
+[data-js="contenthidder"] [data-contenthidder="content"] {
+	display: none;
+}
+
+[data-js="contenthidder"].active [data-contenthidder="content"] {
+	display: block;
+}
