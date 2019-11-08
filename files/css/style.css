@@ -1,63 +1,54 @@
-@import url("base.css");
+@charset "utf-8";
+@import url("reset.css");
 
 /*-------------------------------------------------------------------------
 	Layout
 /*-----------------------------------------------------------------------*/
 body {
 	-webkit-font-smoothing: antialiased;
-	background-color: #eee;
+  font-family: 'Lato', sans-serif;
 }
 
 #all {
 	padding: 60px;
 }
 
-#main {
-	padding: 30px;
-	background-color: #fff;
-}
-
-.wrap {
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-}
-
 /*-------------------------------------------------------------------------
 	Common
 /*-----------------------------------------------------------------------*/
-h1 {
-	margin-bottom: 30px;
+.title {
+	margin-bottom: 15px;
 	font-size: 24px;
 	font-weight: bold;
 }
 
+.summary {
+	margin-bottom: 30px;
+	font-size: 16px;
+}
+
 /*-------------------------------------------------------------------------
-	Style
+	Tree
 /*-----------------------------------------------------------------------*/
 .site-url {
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	padding: 1em;
-	background-color: #ccc;
+	background-color: #efefef;
 	font-size: 16px;
 	font-weight: bold;
-	line-height: 1;
 }
 
 .directory-wrap {
-	margin-top: -20px;
-	margin-left: -20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: -20px;
+  margin-bottom: 20px;
 }
 
 .directory {
-	float: left;
-	width: calc(50% - 20px);
+	width: calc(50% - 10px);
 	margin-top: 20px;
-	margin-left: 20px;
-}
-
-.directory:last-child {
-	margin-bottom: 0;
 }
 
 	.directory.active .toggle:after {
@@ -65,7 +56,11 @@ h1 {
 	}
 
 .info {
-	position: relative;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 20px;
+  height: 42px;
 	background-color: #efefef;
 	cursor: pointer;
 }
@@ -75,28 +70,20 @@ h1 {
 }
 
 h3 {
-	padding: 1em;
 	font-size: 14px;
-	font-weight: bold;
-	line-height: 1;
+  font-weight: bold;
 }
 
 .pagelength {
-	position: absolute;
-	top: 50%;
-	right: 40px;
-	margin-top: -.5em;
+  margin-left: auto;
 	font-size: 14px;
-	line-height: 1;
 }
 
 .toggle {
-	position: absolute;
-	top: 50%;
-	right: 15px;
-	width: 16px;
+  position: relative;
+  width: 16px;
 	height: 16px;
-	margin-top: -8px;
+  margin-left: 15px;
 	border: none;
 	background-color: transparent;
 	line-height: 1;
@@ -105,8 +92,8 @@ h3 {
 	appearance: none;
 }
 
-.toggle:before,
-.toggle:after {
+.toggle::before,
+.toggle::after {
 	display: block;
 	content: '';
 	visibility: visible;
@@ -115,31 +102,27 @@ h3 {
 	background-color: #000;
 }
 
-.toggle:before {
+.toggle::before {
 	left: 0;
 	width: 100%;
-	height: 2px;
-	margin-top: -1px;
+	height: 4px;
+	margin-top: -2px;
 }
 
-.toggle:after {
+.toggle::after {
 	left: 50%;
-	width: 2px;
+	width: 4px;
 	height: 100%;
 	margin-top: -50%;
-	margin-left: -1px;
+	margin-left: -2px;
 }
 
 .file-list {
-	padding: 5px 10px;
+	padding: 10px;
 }
 
-	.file-list li {
-		margin-bottom: 5px;
-	}
-
-	.file-list li:last-child {
-		margin-bottom: 0;
+	.file-list li + li{
+		margin-top: 5px;
 	}
 
 		.file-list li a {
@@ -147,35 +130,33 @@ h3 {
 			position: relative;
 			padding-left: 1em;
 			font-size: 12px;
-			line-height: 1;
+			line-height: 1.2;
 		}
 
 		.file-list li a:hover {
 			opacity: .8;
 		}
 
-		.file-list li a:before {
+		.file-list li a::before {
 			display: block;
 			content: '';
 			position: absolute;
 			top: 50%;
 			left: 0;
-			margin-top: -.25em;
-			width: .5em;
-			height: .5em;
+			width: .3em;
+			height: .3em;
+			margin-top: -.15em;
 			border-radius: 50%;
 			background-color: #000;
-		}
+    }
+
+.total {
+  text-align: right;
+}
 
 /*-------------------------------------------------------------------------
 	Contenthidder
 /*-----------------------------------------------------------------------*/
-[data-js="contenthidder"] {
-}
-
-[data-js="contenthidder"] [data-contenthidder="toggle"] {
-}
-
 [data-js="contenthidder"] [data-contenthidder="content"] {
 	display: none;
 }
